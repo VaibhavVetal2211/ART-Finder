@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">📚 Bookstore</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Add New Book</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="addBookForm">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="author" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="price" step="0.01" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="genre" class="form-label">Genre</label>
+                                <input type="text" class="form-control" id="genre" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Book</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title mb-0">Book List</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Price</th>
+                                        <th>Genre</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Book Modal -->
+    <div class="modal fade" id="editBookModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editBookForm">
+                        <input type="hidden" id="editBookId">
+                        <div class="mb-3">
+                            <label for="editTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="editTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editAuthor" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="editAuthor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPrice" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="editPrice" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editGenre" class="form-label">Genre</label>
+                            <input type="text" class="form-control" id="editGenre" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveEdit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

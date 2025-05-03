@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "role": "Developer",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "role": "Designer",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "email": "mike@example.com",
+      "role": "Manager",
+      "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Wilson",
+      "email": "sarah@example.com",
+      "role": "Developer",
+      "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Alex Brown",
+      "email": "alex@example.com",
+      "role": "Designer",
+      "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "John Sena",
+        "email": "john@example.com",
+        "role": "Engineer",
+        "avatar": "https://randomuser.me/api/portraits/men/6.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Dj Bravo",
+        "email": "djbravo@example.com",
+        "role": "Dj",
+        "avatar": "https://randomuser.me/api/portraits/men/7.jpg"
+      }
+
+  ]
+}

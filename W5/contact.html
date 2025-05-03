@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mug Store - Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mug Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light">
+                        <i class="bi bi-cart"></i> Cart (0)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <div class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Contact Us</h1>
+            <p class="lead">We'd love to hear from you</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Contact Information -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h3 class="mb-4">Get in Touch</h3>
+                <div class="mb-4">
+                    <h5><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Visit Us</h5>
+                    <p class="ms-4">123 Mug Street<br>Coffee Town, CT 12345<br>United States</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="bi bi-telephone-fill me-2 text-primary"></i>Call Us</h5>
+                    <p class="ms-4">(555) 123-4567</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="bi bi-envelope-fill me-2 text-primary"></i>Email Us</h5>
+                    <p class="ms-4">info@mugstore.com</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="bi bi-clock-fill me-2 text-primary"></i>Business Hours</h5>
+                    <p class="ms-4">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Send Us a Message</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="container-fluid px-0 mb-5">
+        <div class="ratio ratio-21x9" style="max-height: 400px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMCcwMC4wIk4gNzPCsDU0JzAwLjAiVw!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Your one-stop shop for unique and stylish mugs.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="products.html" class="text-light">Products</a></li>
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@mugstore.com</li>
+                        <li>Phone: (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2024 Mug Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

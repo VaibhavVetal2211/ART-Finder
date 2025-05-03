@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2d3436;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .users-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .user-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .user-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: block;
+            border: 3px solid #6c5ce7;
+        }
+
+        .user-name {
+            color: #2d3436;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-email {
+            color: #636e72;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .user-role {
+            background: #6c5ce7;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0 auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #2d3436;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .users-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Directory</h1>
+        <div id="users" class="users-grid">
+            <div class="loading">Loading users...</div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchUsers() {
+            try {
+                const response = await fetch('http://localhost:3000/api/users');
+                const data = await response.json();
+                displayUsers(data.users);
+            } catch (error) {
+                console.error('Error fetching users:', error);
+                document.getElementById('users').innerHTML = '<p class="loading">Error loading users. Please try again later.</p>';
+            }
+        }
+
+        function displayUsers(users) {
+            const usersContainer = document.getElementById('users');
+            usersContainer.innerHTML = users.map(user => `
+                <div class="user-card">
+                    <img src="${user.avatar}" alt="${user.name}" class="user-avatar">
+                    <h2 class="user-name">${user.name}</h2>
+                    <p class="user-email">${user.email}</p>
+                    <span class="user-role">${user.role}</span>
+                </div>
+            `).join('');
+        }
+
+        // Fetch users when the page loads
+        fetchUsers();
+    </script>
+</body>
+</html>

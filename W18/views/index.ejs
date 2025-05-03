@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52,152,219,0.3);
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+
+        #updateForm {
+            background-color: #f8f9fa;
+            border: 2px solid #3498db;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .update-btn {
+            background-color: #2ecc71;
+        }
+
+        .update-btn:hover {
+            background-color: #27ae60;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Database</h1>
+        
+        <!-- Display Songs Table -->
+        <div class="section">
+            <h2>All Songs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Film</th>
+                        <th>Music Director</th>
+                        <th>Singer</th>
+                        <th>Actor</th>
+                        <th>Actress</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% songs.forEach(function(song) { %>
+                        <tr>
+                            <td><%= song.songname %></td>
+                            <td><%= song.film %></td>
+                            <td><%= song.music_director %></td>
+                            <td><%= song.singer %></td>
+                            <td><%= song.actor || 'N/A' %></td>
+                            <td><%= song.actress || 'N/A' %></td>
+                            <td class="actions">
+                                <button class="delete-btn" onclick="deleteSong('<%= song._id %>')">Delete</button>
+                                <button class="update-btn" onclick="showUpdateForm('<%= song._id %>')">Update</button>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add New Song -->
+        <div class="section">
+            <h2>Add New Song</h2>
+            <form id="addSongForm">
+                <div class="form-group">
+                    <label for="songname">Song Name:</label>
+                    <input type="text" id="songname" name="songname" required placeholder="Enter song name">
+                </div>
+                <div class="form-group">
+                    <label for="film">Film:</label>
+                    <input type="text" id="film" name="film" required placeholder="Enter film name">
+                </div>
+                <div class="form-group">
+                    <label for="music_director">Music Director:</label>
+                    <input type="text" id="music_director" name="music_director" required placeholder="Enter music director name">
+                </div>
+                <div class="form-group">
+                    <label for="singer">Singer:</label>
+                    <input type="text" id="singer" name="singer" required placeholder="Enter singer name">
+                </div>
+                <button type="submit">Add Song</button>
+            </form>
+        </div>
+
+        <!-- Search by Music Director -->
+        <div class="section">
+            <h2>Search by Music Director</h2>
+            <form id="searchDirectorForm">
+                <div class="form-group">
+                    <label for="director">Music Director:</label>
+                    <input type="text" id="director" name="director" required placeholder="Enter music director name">
+                </div>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Search by Music Director and Singer -->
+        <div class="section">
+            <h2>Search by Music Director and Singer</h2>
+            <form id="searchDirectorSingerForm">
+                <div class="form-group">
+                    <label for="director2">Music Director:</label>
+                    <input type="text" id="director2" name="director" required placeholder="Enter music director name">
+                </div>
+                <div class="form-group">
+                    <label for="singer2">Singer:</label>
+                    <input type="text" id="singer2" name="singer" required placeholder="Enter singer name">
+                </div>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Search by Singer and Film -->
+        <div class="section">
+            <h2>Search by Singer and Film</h2>
+            <form id="searchSingerFilmForm">
+                <div class="form-group">
+                    <label for="singer3">Singer:</label>
+                    <input type="text" id="singer3" name="singer" required placeholder="Enter singer name">
+                </div>
+                <div class="form-group">
+                    <label for="film2">Film:</label>
+                    <input type="text" id="film2" name="film" required placeholder="Enter film name">
+                </div>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Update Song Form (Hidden by default) -->
+        <div id="updateForm" class="section" style="display: none;">
+            <h2>Update Song</h2>
+            <form id="updateSongForm">
+                <input type="hidden" id="updateId">
+                <div class="form-group">
+                    <label for="actor">Actor:</label>
+                    <input type="text" id="actor" name="actor" required placeholder="Enter actor name">
+                </div>
+                <div class="form-group">
+                    <label for="actress">Actress:</label>
+                    <input type="text" id="actress" name="actress" required placeholder="Enter actress name">
+                </div>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="section">
+            <h2>Results</h2>
+            <div id="resultContent" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add New Song
+        document.getElementById('addSongForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = {
+                songname: document.getElementById('songname').value,
+                film: document.getElementById('film').value,
+                music_director: document.getElementById('music_director').value,
+                singer: document.getElementById('singer').value
+            };
+            try {
+                const response = await fetch('/songs', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                const result = await response.json();
+                showResult('Song added successfully!');
+                location.reload();
+            } catch (error) {
+                showResult('Error adding song: ' + error.message);
+            }
+        });
+
+        // Show Results
+        function showResult(data) {
+            const resultContent = document.getElementById('resultContent');
+            resultContent.innerHTML = ''; // Clear previous results
+
+            if (typeof data === 'string') {
+                // If it's a success/error message
+                resultContent.textContent = data;
+            } else {
+                // If it's an array of songs
+                if (Array.isArray(data) && data.length > 0) {
+                    const table = document.createElement('table');
+                    
+                    // Create table header
+                    const thead = document.createElement('thead');
+                    const headerRow = document.createElement('tr');
+                    const headers = ['Song Name', 'Film', 'Music Director', 'Singer', 'Actor', 'Actress'];
+                    
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        headerRow.appendChild(th);
+                    });
+                    
+                    thead.appendChild(headerRow);
+                    table.appendChild(thead);
+
+                    // Create table body
+                    const tbody = document.createElement('tbody');
+                    data.forEach(song => {
+                        const row = document.createElement('tr');
+                        const cells = [
+                            song.songname,
+                            song.film,
+                            song.music_director,
+                            song.singer,
+                            song.actor || 'N/A',
+                            song.actress || 'N/A'
+                        ];
+                        
+                        cells.forEach(cell => {
+                            const td = document.createElement('td');
+                            td.textContent = cell;
+                            row.appendChild(td);
+                        });
+                        
+                        tbody.appendChild(row);
+                    });
+                    
+                    table.appendChild(tbody);
+                    resultContent.appendChild(table);
+                } else {
+                    resultContent.textContent = 'No results found';
+                }
+            }
+            
+            document.getElementById('results').style.display = 'block';
+        }
+
+        // Search by Music Director
+        document.getElementById('searchDirectorForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const director = document.getElementById('director').value;
+            try {
+                const response = await fetch(`/songs/director/${director}`);
+                const result = await response.json();
+                showResult(result);
+            } catch (error) {
+                showResult('Error searching songs: ' + error.message);
+            }
+        });
+
+        // Search by Music Director and Singer
+        document.getElementById('searchDirectorSingerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const director = document.getElementById('director2').value;
+            const singer = document.getElementById('singer2').value;
+            try {
+                const response = await fetch(`/songs/director/${director}/singer/${singer}`);
+                const result = await response.json();
+                showResult(result);
+            } catch (error) {
+                showResult('Error searching songs: ' + error.message);
+            }
+        });
+
+        // Search by Singer and Film
+        document.getElementById('searchSingerFilmForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const singer = document.getElementById('singer3').value;
+            const film = document.getElementById('film2').value;
+            try {
+                const response = await fetch(`/songs/singer/${singer}/film/${film}`);
+                const result = await response.json();
+                showResult(result);
+            } catch (error) {
+                showResult('Error searching songs: ' + error.message);
+            }
+        });
+
+        // Delete Song
+        async function deleteSong(id) {
+            if (confirm('Are you sure you want to delete this song?')) {
+                try {
+                    const response = await fetch(`/songs/${id}`, {
+                        method: 'DELETE'
+                    });
+                    const result = await response.json();
+                    showResult('Song deleted successfully!');
+                    location.reload();
+                } catch (error) {
+                    showResult('Error deleting song: ' + error.message);
+                }
+            }
+        }
+
+        // Show Update Form
+        function showUpdateForm(id) {
+            document.getElementById('updateForm').style.display = 'block';
+            document.getElementById('updateId').value = id;
+        }
+
+        // Update Song
+        document.getElementById('updateSongForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('updateId').value;
+            const formData = {
+                actor: document.getElementById('actor').value,
+                actress: document.getElementById('actress').value
+            };
+            try {
+                const response = await fetch(`/songs/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                const result = await response.json();
+                showResult('Song updated successfully!');
+                location.reload();
+            } catch (error) {
+                showResult('Error updating song: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html> 

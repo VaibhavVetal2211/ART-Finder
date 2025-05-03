@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT - Pune Institute of Computer Technology</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .ui-header {
+            background: #003366 !important;
+        }
+        .ui-footer {
+            background: #003366 !important;
+        }
+        .ui-title {
+            color: white !important;
+        }
+        .ui-footer .ui-title {
+            color: white !important;
+        }
+        .ui-content {
+            padding: 20px;
+        }
+        .welcome-banner {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .welcome-banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .feature-box {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-position="fixed">
+            <h1>PICT</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div class="welcome-banner">
+                <h2>Welcome to PICT</h2>
+                <p>Pune Institute of Computer Technology</p>
+                <img src="campus.jpg" alt="PICT Campus">
+            </div>
+
+            <div class="feature-box">
+                <h3>Excellence in Education</h3>
+                <p>PICT is committed to providing quality education in the field of computer technology and engineering.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>State-of-the-Art Infrastructure</h3>
+                <p>Modern laboratories, well-equipped classrooms, and advanced research facilities.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Industry Connect</h3>
+                <p>Strong industry partnerships and placement opportunities for students.</p>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2024 PICT. All rights reserved.</h4>
+        </div>
+    </div>
+</body>
+</html> 

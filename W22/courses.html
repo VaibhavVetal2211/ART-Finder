@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - PICT</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .ui-header {
+            background: #003366 !important;
+        }
+        .ui-footer {
+            background: #003366 !important;
+        }
+        .ui-title {
+            color: white !important;
+        }
+        .ui-footer .ui-title {
+            color: white !important;
+        }
+        .ui-content {
+            padding: 20px;
+        }
+        .course-card {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .course-details {
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page" id="courses">
+        <div data-role="header" data-position="fixed">
+            <h1>Courses</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html" class="ui-btn-active">Courses</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h2>Undergraduate Programs</h2>
+            
+            <div class="course-card">
+                <h3>B.E. Computer Engineering</h3>
+                <div data-role="collapsible">
+                    <h4>Course Details</h4>
+                    <div class="course-details">
+                        <p><strong>Duration:</strong> 4 Years</p>
+                        <p><strong>Intake:</strong> 180 seats</p>
+                        <p><strong>Key Subjects:</strong></p>
+                        <ul>
+                            <li>Data Structures</li>
+                            <li>Computer Networks</li>
+                            <li>Operating Systems</li>
+                            <li>Database Management</li>
+                            <li>Software Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h3>B.E. Information Technology</h3>
+                <div data-role="collapsible">
+                    <h4>Course Details</h4>
+                    <div class="course-details">
+                        <p><strong>Duration:</strong> 4 Years</p>
+                        <p><strong>Intake:</strong> 120 seats</p>
+                        <p><strong>Key Subjects:</strong></p>
+                        <ul>
+                            <li>Web Technologies</li>
+                            <li>Cloud Computing</li>
+                            <li>Mobile Computing</li>
+                            <li>Information Security</li>
+                            <li>Big Data Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Postgraduate Programs</h2>
+            
+            <div class="course-card">
+                <h3>M.E. Computer Engineering</h3>
+                <div data-role="collapsible">
+                    <h4>Course Details</h4>
+                    <div class="course-details">
+                        <p><strong>Duration:</strong> 2 Years</p>
+                        <p><strong>Intake:</strong> 24 seats</p>
+                        <p><strong>Specializations:</strong></p>
+                        <ul>
+                            <li>Artificial Intelligence</li>
+                            <li>Machine Learning</li>
+                            <li>Computer Networks</li>
+                            <li>Software Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h3>M.E. Information Technology</h3>
+                <div data-role="collapsible">
+                    <h4>Course Details</h4>
+                    <div class="course-details">
+                        <p><strong>Duration:</strong> 2 Years</p>
+                        <p><strong>Intake:</strong> 24 seats</p>
+                        <p><strong>Specializations:</strong></p>
+                        <ul>
+                            <li>Data Science</li>
+                            <li>Cloud Computing</li>
+                            <li>Information Security</li>
+                            <li>Mobile Computing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2024 PICT. All rights reserved.</h4>
+        </div>
+    </div>
+</body>
+</html> 
