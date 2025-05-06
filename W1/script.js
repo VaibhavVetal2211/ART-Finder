@@ -1,72 +1,72 @@
 const products = [
     {
-        image: 'https://placehold.co/400x400?text=Wireless+Headphones',
+        image: './images/wireless_headphones.jpg',
         name: 'Wireless Headphones',
         price: 7999,
         description: 'Noise-cancelling over-ear headphones with premium sound quality.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Smartwatch',
+        image: './images/smartwatch.jpg',
         name: 'Smartwatch',
         price: 12999,
         description: 'Advanced fitness tracking smartwatch with heart rate monitoring.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Gaming+Mouse',
+        image: './images/gaming_mouse.jpg',
         name: 'Gaming Mouse',
         price: 2499,
         description: 'Ergonomic gaming mouse with RGB lighting.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Laptop+Stand',
+        image: './images/laptop_stand.jpg',
         name: 'Laptop Stand',
         price: 1999,
         description: 'Adjustable aluminum laptop stand for better ergonomics.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Mechanical+Keyboard',
+        image: './images/mechanical_keyboard.jpg',
         name: 'Mechanical Keyboard',
         price: 5999,
         description: 'RGB mechanical keyboard with blue switches.'
     },
     {
-        image: 'https://placehold.co/400x400?text=4K+Monitor',
+        image: './images/4k_monitor.jpg',
         name: '4K Monitor',
         price: 29999,
         description: '27-inch 4K LED monitor with HDR support.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Wireless+Speaker',
+        image: './images/wireless_speaker.jpg',
         name: 'Wireless Speaker',
         price: 4999,
         description: 'Portable Bluetooth speaker with 20W output.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Webcam',
+        image: './images/webcam.jpg',
         name: 'Webcam',
         price: 3499,
         description: '1080p HD webcam with built-in microphone.'
     },
     {
-        image: 'https://placehold.co/400x400?text=External+SSD',
+        image: './images/external_ssd.jpg',
         name: 'External SSD',
         price: 8999,
         description: '1TB portable SSD with USB-C connection.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Gaming+Headset',
+        image: './images/gaming_headset.jpg',
         name: 'Gaming Headset',
         price: 6499,
         description: '7.1 surround sound gaming headset with mic.'
     },
     {
-        image: 'https://placehold.co/400x400?text=Wireless+Mouse',
+        image: './images/wireless_mouse.jpg',
         name: 'Wireless Mouse',
         price: 1999,
         description: 'Ergonomic wireless mouse with long battery life.'
     },
     {
-        image: 'https://placehold.co/400x400?text=USB+Hub',
+        image: './images/usb_hub.jpg',
         name: 'USB Hub',
         price: 2499,
         description: '7-port USB 3.0 hub with power delivery.'

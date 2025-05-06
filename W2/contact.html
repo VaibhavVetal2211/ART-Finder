@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Vaibhav Vetal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .contact-item span {
+            font-weight: bold;
+            margin-right: 1rem;
+            color: #2c3e50;
+            min-width: 100px;
+        }
+        .contact-item a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .achievements {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .achievements h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .achievements ul {
+            list-style: none;
+        }
+        .achievements li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .achievements li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Vaibhav Vetal</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2>Contact Information</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>Phone:</span>
+                    <a href="tel:+917066731673">+91 7066731673</a>
+                </div>
+                <div class="contact-item">
+                    <span>Email:</span>
+                    <a href="mailto:vaibhavvetal1@gmail.com">vaibhavvetal1@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>GitHub:</span>
+                    <a href="https://github.com" target="_blank">GitHub Profile</a>
+                </div>
+                <div class="contact-item">
+                    <span>LinkedIn:</span>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h3>Achievements</h3>
+                <ul>
+                    <li>Participated in IMPETUS 2024 (InC, PICT)</li>
+                    <li>Solved 400+ coding problems on various platforms including LeetCode, GFG, CodeForces, CodeChef, etc.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vaibhav Vetal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
