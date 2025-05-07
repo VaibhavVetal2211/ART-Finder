@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - TaskMaster</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .contact-container {
             display: grid;
@@ -35,11 +33,8 @@
             margin-bottom: 1.5rem;
         }
 
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 1rem;
-            width: 2rem;
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
         }
 
         .form-group {
@@ -96,7 +91,6 @@
                 <p>Have questions or feedback? We're here to help!</p>
                 
                 <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
                     <div>
                         <h3>Email</h3>
                         <p>support@taskmaster.com</p>
@@ -104,7 +98,6 @@
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-phone"></i>
                     <div>
                         <h3>Phone</h3>
                         <p>+1 (555) 123-4567</p>
@@ -112,7 +105,6 @@
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <h3>Address</h3>
                         <p>123 Productivity Street<br>Tech City, TC 12345</p>
@@ -143,9 +135,7 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
+                    <button type="submit" class="btn-primary">Send Message</button>
                 </form>
             </div>
         </div>

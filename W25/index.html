@@ -1,257 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio - John Doe</title>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery Mobile CSS & JS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
+
 <body>
-    <!-- Home Page -->
-    <div data-role="page" id="home">
-        <div data-role="header">
-            <h1>Vaibhav Vetal</h1>
-            <a href="#nav-panel" class="ui-btn ui-btn-icon-notext ui-icon-bars">Menu</a>
-        </div>
 
-        <div data-role="main" class="ui-content">
-            <div class="hero-section">
-                <div class="hero-overlay"></div>
-                <div class="hero-content animate-in">
-                    <h1>Welcome to My World</h1>
-                    <p class="lead">Transforming Ideas into Digital Reality</p>
-                </div>
-            </div>
-
-            <div class="profile-section animate-in">
-                <img src="profile.png" alt="Profile" class="profile-image">
-                <h2>Full Stack Developer</h2>
-                <p>Passionate about creating beautiful and functional web experiences with a focus on user-centered design and modern technologies.</p>
-                <div class="social-links">
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-dribbble"></a>
-                </div>
-            </div>
-
-            <div class="stats-section animate-in">
-                <div class="stat-card">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Awards Won</div>
-                </div>
-            </div>
-
-            <div class="timeline-section animate-in">
-                <h2>Professional Journey</h2>
-                <div class="timeline-item">
-                    <h3>Present</h3>
-                    <p>Full Stack Intern at Astraeus NextGen Pvt. Ltd</p>
-                    <p>Working on cutting-edge web development projects and gaining hands-on experience in full-stack development</p>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <h4>&copy; 2024 Vaibhav Vetal Portfolio</h4>
-        </div>
-
-        <!-- Panel for Navigation -->
-        <div data-role="panel" id="nav-panel" data-display="overlay">
-            <ul data-role="listview">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+  <!-- Home / About Me -->
+  <div data-role="page" id="about">
+    <div data-role="header">
+      <h1>About Me</h1>
     </div>
-
-    <!-- About Page -->
-    <div data-role="page" id="about">
-        <div data-role="header">
-            <a href="#home" class="ui-btn ui-btn-icon-left ui-icon-home">Home</a>
-            <h1>About Me</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <h2>My Journey</h2>
-            <p>I am a passionate full-stack developer currently pursuing my undergraduate degree in Information Technology. I specialize in creating innovative solutions and have hands-on experience in web development through my internship.</p>
-            
-            <div data-role="collapsible-set">
-                <div data-role="collapsible">
-                    <h3>Education</h3>
-                    <ul data-role="listview">
-                        <li>Pune Institute of Computer Technology - B.E. Information Technology (CGPA: 8.0)</li>
-                        <li>V.S. Satav High School, Pune - HSC (78%)</li>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h3>Experience</h3>
-                    <ul data-role="listview">
-                        <li>Full Stack Intern - Astraeus NextGen Pvt. Ltd</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <h4>&copy; 2024 Vaibhav Vetal Portfolio</h4>
-        </div>
+    <div data-role="content">
+      <p>Hello! I'm a passionate web developer who loves creating mobile-friendly websites and applications.</p>
     </div>
-
-    <!-- Portfolio Page -->
-    <div data-role="page" id="portfolio">
-        <div data-role="header">
-            <a href="#home" class="ui-btn ui-btn-icon-left ui-icon-home">Home</a>
-            <h1>Portfolio</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="ART Finder" class="project-image">
-                    <div class="project-info">
-                        <h3>Automated Research and Trigger Finder (ART Finder)</h3>
-                        <p>Python, JavaScript, React.js, Flask, MongoDB, AWS - An automated research tool for streamlining ad creation through data analysis</p>
-                        <a href="#" class="ui-btn ui-btn-inline ui-corner-all">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Blog Platform" class="project-image">
-                    <div class="project-info">
-                        <h3>Blog Platform</h3>
-                        <p>HTML, CSS, JavaScript, Node.js, Express.js, Bootstrap, MongoDB - A full-stack blog platform with user authentication</p>
-                        <a href="#" class="ui-btn ui-btn-inline ui-corner-all">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="CourseScope" class="project-image">
-                    <div class="project-info">
-                        <h3>CourseScope (Course Recommendation Website)</h3>
-                        <p>HTML, CSS, JavaScript, Python, scikit-learn - A machine learning-based course recommendation system</p>
-                        <a href="https://github.com/VaibhavVetal2211/Course-Recommendation-Website" class="ui-btn ui-btn-inline ui-corner-all">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <h4>&copy; 2024 Vaibhav Vetal Portfolio</h4>
-        </div>
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#about" class="ui-btn-active">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <!-- Skills Page -->
-    <div data-role="page" id="skills">
-        <div data-role="header">
-            <a href="#home" class="ui-btn ui-btn-icon-left ui-icon-home">Home</a>
-            <h1>Skills</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <h2>Technical Skills</h2>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%;">Programming Languages: C++, C, Java, Python, JavaScript</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%;">Web Development: HTML, CSS, JavaScript, Node.js, Express.js, Bootstrap</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%;">Database Management: MySQL, MongoDB</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%;">Tools: Git, GitHub, Figma</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%;">Concepts: Data Structures and Algorithms (DSA), Object-Oriented Programming (OOP), DBMS</div>
-            </div>
-            </div>
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <h4>&copy; 2024 Vaibhav Vetal Portfolio</h4>
-        </div>
+  <!-- Projects -->
+  <div data-role="page" id="projects">
+    <div data-role="header">
+      <h1>Projects</h1>
     </div>
-
-    <!-- Contact Page -->
-    <div data-role="page" id="contact">
-        <div data-role="header">
-            <a href="#home" class="ui-btn ui-btn-icon-left ui-icon-home">Home</a>
-            <h1>Contact</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <h2>Get in Touch</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-                
-                <label for="subject">Subject:</label>
-                <input type="text" name="subject" id="subject" required>
-                
-                <label for="message">Message:</label>
-                <textarea name="message" id="message" required></textarea>
-                
-                <input type="submit" value="Send Message" data-theme="b" class="ui-btn ui-corner-all">
-            </form>
-
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><i class="fa fa-envelope"></i> vaibhavvetal1@gmail.com</p>
-                <p><i class="fa fa-phone"></i> +91 7066731675</p>
-                <p><i class="fa fa-map-marker"></i> Pune, India</p>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/vaibhav-vetal-245007294/" class="ui-btn ui-btn-inline social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/VaibhavVetal2211" class="ui-btn ui-btn-inline social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/vaibhav_vetal_2211" class="ui-btn ui-btn-inline social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <h4>&copy; 2024 Vaibhav Vetal Portfolio</h4>
-        </div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li><h2>Portfolio Website</h2><p>Personal branding site using HTML, CSS, and JavaScript</p></li>
+        <li><h2>Todo App</h2><p>Simple task manager built with React and Firebase</p></li>
+        <li><h2>Weather App</h2><p>Real-time weather forecast using OpenWeatherMap API</p></li>
+      </ul>
     </div>
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects" class="ui-btn-active">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-    <script>
-    $(document).ready(function() {
-        // Animate skill bars when skills page is shown
-        $(document).on('pageshow', '#skills', function() {
-            $('.skill-progress').addClass('animate-skill');
-        });
+  <!-- Skills -->
+  <div data-role="page" id="skills">
+    <div data-role="header">
+      <h1>Skills</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview" data-inset="true">
+        <li>HTML5, CSS3</li>
+        <li>JavaScript, jQuery</li>
+        <li>React, Angular</li>
+        <li>Node.js, Express</li>
+        <li>MongoDB, Firebase</li>
+      </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills" class="ui-btn-active">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-        // Reset animation when leaving skills page
-        $(document).on('pagehide', '#skills', function() {
-            $('.skill-progress').removeClass('animate-skill');
-        });
+  <!-- Contact -->
+  <div data-role="page" id="contact">
+    <div data-role="header">
+      <h1>Contact Info</h1>
+    </div>
+    <div data-role="content">
+      <p>Email: yourname@example.com</p>
+      <p>Phone: +91-9876543210</p>
+      <p>GitHub: github.com/yourprofile</p>
+      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-        // Handle contact form submission
-        $('#contact-form').on('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-    });
-    </script>
 </body>
 </html>

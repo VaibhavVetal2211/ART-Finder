@@ -1,1 +1,29 @@
-<p>profile works!</p>
+<div class="profile-container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <h2>User Profile</h2>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+    
+    <div class="profile-info">
+      <div class="info-group">
+        <label>Full Name</label>
+        <p>{{user?.name || 'Not provided'}}</p>
+      </div>
+      
+      <div class="info-group">
+        <label>Email</label>
+        <p>{{user?.email || 'Not provided'}}</p>
+      </div>
+      
+      <div class="info-group">
+        <label>Member Since</label>
+        <p>{{user?.joinDate | date:'mediumDate' || 'Not available'}}</p>
+      </div>
+    </div>
+    
+    <div class="profile-actions">
+      <button class="edit-btn" (click)="editProfile()">Edit Profile</button>
+    </div>
+  </div>
+</div>

@@ -2,9 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoInput = document.getElementById('todoInput');
     const addTodoBtn = document.getElementById('addTodoBtn');
     const todoList = document.getElementById('todoList');
-    const filterBtns = document.querySelectorAll('.filter-btn');
     
-    let currentFilter = 'all';
     let todos = [];
 
     // Fetch all todos
@@ -26,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ text, completed: false }),
+                body: JSON.stringify({ text }),
             });
             const newTodo = await response.json();
             todos.push(newTodo);
@@ -68,34 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Render todos based on current filter
+    // Render todos
     const renderTodos = () => {
-        const filteredTodos = todos.filter(todo => {
-            if (currentFilter === 'active') return !todo.completed;
-            if (currentFilter === 'completed') return todo.completed;
-            return true;
-        });
-
-        todoList.innerHTML = filteredTodos.map(todo => `
+        todoList.innerHTML = todos.map(todo => `
             <tr>
-                <td>
-                    <span class="${todo.completed ? 'completed' : ''}">${todo.text}</span>
-                </td>
-                <td>
-                    <span class="status ${todo.completed ? 'completed' : 'active'}">
-                        ${todo.completed ? 'Completed' : 'Active'}
-                    </span>
-                </td>
+                <td>${todo.text}</td>
                 <td>${new Date(todo.createdAt).toLocaleDateString()}</td>
                 <td>
-                    <button class="action-btn complete-btn" onclick="toggleComplete(${todo.id}, ${!todo.completed})">
-                        <i class="fas ${todo.completed ? 'fa-undo' : 'fa-check'}"></i>
-                    </button>
                     <button class="action-btn edit-btn" onclick="editTodo(${todo.id})">
-                        <i class="fas fa-edit"></i>
+                        Edit
                     </button>
                     <button class="action-btn delete-btn" onclick="deleteTodo(${todo.id})">
-                        <i class="fas fa-trash"></i>
+                        Delete
                     </button>
                 </td>
             </tr>
@@ -119,17 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilter = btn.dataset.filter;
-            renderTodos();
-        });
-    });
-
     // Make functions available globally
-    window.toggleComplete = (id, completed) => updateTodo(id, { completed });
     window.editTodo = (id) => {
         const todo = todos.find(t => t.id === id);
         const newText = prompt('Edit task:', todo.text);

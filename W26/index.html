@@ -2,140 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PICT B.E. Course Structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery Mobile CSS & JS -->
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-    <div data-role="page" id="home">
-        <div data-role="header" data-theme="b">
-            <h1>PICT B.E. Course Structure</h1>
-        </div>
 
-        <div data-role="main" class="ui-content">
-            <div class="logo-container">
-                <img src="logo.png" alt="PICT Logo" class="logo">
+<div data-role="page" id="home">
+    <div data-role="header" data-position="fixed">
+        <h1>PICT B.E. Course Structure</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsible-set">
+
+            <!-- First Year (FE) -->
+            <div data-role="collapsible">
+                <h3>First Year (FE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Engineering Mathematics I</strong><br>Foundation in calculus and linear algebra.</li>
+                    <li><strong>Engineering Physics</strong><br>Concepts in mechanics, optics, and modern physics.</li>
+                    <li><strong>Basic Electronics</strong><br>Introduction to electronic components and circuits.</li>
+                    <li><strong>Programming in C</strong><br>Basics of C language and problem solving.</li>
+                </ul>
             </div>
 
-            <div data-role="collapsible" data-theme="b" data-content-theme="a">
-                <h2>First Year (FE)</h2>
-                <div class="course-content">
-                    <h3>Core Subjects</h3>
-                    <ul data-role="listview" data-inset="true">
-                        <li>
-                            <h4>Engineering Mathematics</h4>
-                            <p>Advanced mathematical concepts and their applications in engineering</p>
-                        </li>
-                        <li>
-                            <h4>Engineering Physics</h4>
-                            <p>Fundamental physics principles and their engineering applications</p>
-                        </li>
-                        <li>
-                            <h4>Engineering Chemistry</h4>
-                            <p>Chemical principles and their applications in engineering</p>
-                        </li>
-                        <li>
-                            <h4>Basic Electronics</h4>
-                            <p>Introduction to electronic components and circuits</p>
-                        </li>
-                        <li>
-                            <h4>Programming Fundamentals</h4>
-                            <p>Introduction to programming concepts and problem-solving</p>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Second Year (SE) -->
+            <div data-role="collapsible">
+                <h3>Second Year (SE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Data Structures</strong><br>Efficient ways to store and access data.</li>
+                    <li><strong>Computer Architecture</strong><br>Study of CPU, memory, and I/O systems.</li>
+                    <li><strong>Discrete Mathematics</strong><br>Logic, sets, relations, and combinatorics.</li>
+                    <li><strong>Object Oriented Programming</strong><br>Programming with C++ and object-oriented concepts.</li>
+                </ul>
             </div>
 
-            <div data-role="collapsible" data-theme="b" data-content-theme="a">
-                <h2>Second Year (SE)</h2>
-                <div class="course-content">
-                    <h3>Core Subjects</h3>
-                    <ul data-role="listview" data-inset="true">
-                        <li>
-                            <h4>Data Structures</h4>
-                            <p>Study of fundamental data structures and algorithms</p>
-                        </li>
-                        <li>
-                            <h4>Object-Oriented Programming</h4>
-                            <p>Advanced programming concepts and OOP principles</p>
-                        </li>
-                        <li>
-                            <h4>Database Management Systems</h4>
-                            <p>Database design and management concepts</p>
-                        </li>
-                        <li>
-                            <h4>Computer Networks</h4>
-                            <p>Network protocols and communication systems</p>
-                        </li>
-                        <li>
-                            <h4>Operating Systems</h4>
-                            <p>OS concepts and system programming</p>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Third Year (TE) -->
+            <div data-role="collapsible">
+                <h3>Third Year (TE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Operating Systems</strong><br>Concepts of process management, memory, and scheduling.</li>
+                    <li><strong>Database Management Systems</strong><br>Relational databases and SQL.</li>
+                    <li><strong>Software Engineering</strong><br>Software development life cycle and design principles.</li>
+                    <li><strong>Web Technologies</strong><br>HTML, CSS, JavaScript, and server-side programming.</li>
+                </ul>
             </div>
 
-            <div data-role="collapsible" data-theme="b" data-content-theme="a">
-                <h2>Third Year (TE)</h2>
-                <div class="course-content">
-                    <h3>Core Subjects</h3>
-                    <ul data-role="listview" data-inset="true">
-                        <li>
-                            <h4>Software Engineering</h4>
-                            <p>Software development methodologies and practices</p>
-                        </li>
-                        <li>
-                            <h4>Web Technologies</h4>
-                            <p>Modern web development frameworks and tools</p>
-                        </li>
-                        <li>
-                            <h4>Machine Learning</h4>
-                            <p>Introduction to ML algorithms and applications</p>
-                        </li>
-                        <li>
-                            <h4>Cloud Computing</h4>
-                            <p>Cloud platforms and distributed systems</p>
-                        </li>
-                        <li>
-                            <h4>Information Security</h4>
-                            <p>Cybersecurity principles and practices</p>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Final Year (BE) -->
+            <div data-role="collapsible">
+                <h3>Final Year (BE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Artificial Intelligence</strong><br>Introduction to AI concepts and applications.</li>
+                    <li><strong>Machine Learning</strong><br>Supervised and unsupervised learning techniques.</li>
+                    <li><strong>Cloud Computing</strong><br>Distributed systems and cloud platforms.</li>
+                    <li><strong>Project Work</strong><br>Capstone project in chosen specialization.</li>
+                </ul>
             </div>
 
-            <div data-role="collapsible" data-theme="b" data-content-theme="a">
-                <h2>Final Year (BE)</h2>
-                <div class="course-content">
-                    <h3>Core Subjects</h3>
-                    <ul data-role="listview" data-inset="true">
-                        <li>
-                            <h4>Project Work</h4>
-                            <p>Capstone project implementation and documentation</p>
-                        </li>
-                        <li>
-                            <h4>Professional Ethics</h4>
-                            <p>Ethical considerations in engineering practice</p>
-                        </li>
-                        <li>
-                            <h4>Advanced Topics</h4>
-                            <p>Specialized subjects based on chosen track</p>
-                        </li>
-                        <li>
-                            <h4>Industry Internship</h4>
-                            <p>Practical industry experience and training</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="footer" data-theme="b">
-            <h4>© 2024 PICT. All Rights Reserved.</h4>
         </div>
     </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2025 PICT</h4>
+    </div>
+</div>
+
 </body>
-</html> 
+</html>

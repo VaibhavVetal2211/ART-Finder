@@ -61,10 +61,10 @@ async function loadEmployees() {
                 <td>${new Date(employee.joiningDate).toLocaleDateString()}</td>
                 <td class="action-buttons">
                     <button class="btn btn-sm btn-primary" onclick="editEmployee('${employee._id}')">
-                        <i class="fas fa-edit"></i>
+                        Edit
                     </button>
                     <button class="btn btn-sm btn-danger" onclick="deleteEmployee('${employee._id}')">
-                        <i class="fas fa-trash"></i>
+                        Delete
                     </button>
                 </td>
             `;
@@ -164,4 +164,4 @@ function showAlert(message, type) {
     setTimeout(() => {
         alertDiv.remove();
     }, 3000);
-} 
+}

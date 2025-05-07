@@ -1,66 +1,52 @@
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') center/cover;
-    color: white;
-    padding: 100px 0;
+    background: #f8f9fa;
+    color: #333;
+    padding: 60px 0;
+    text-align: center;
 }
 
 .hero-section h1 {
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
-    animation: fadeInUp 1s ease;
 }
 
 .hero-section .lead {
-    font-size: 1.5rem;
-    animation: fadeInUp 1s ease 0.3s;
-    animation-fill-mode: both;
+    font-size: 1.2rem;
+    color: #666;
 }
 
 .achievement-item {
-    padding: 30px;
-    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
     background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    margin-bottom: 20px;
 }
 
-.achievement-item:hover {
-    transform: translateY(-10px);
-}
-
-.achievement-item i {
-    color: #007bff;
+.achievement-item h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px;
 }
 
 .stats-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.stats-card:hover {
-    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    background: #f8f9fa;
+    border-radius: 5px;
 }
 
 .stats-card .card-title {
-    color: #007bff;
-    font-weight: bold;
+    color: #333;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .stats-card .card-text {
-    color: #495057;
+    color: #666;
     margin-bottom: 0.5rem;
 }
 
@@ -70,36 +56,22 @@
 }
 
 .social-links a {
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #007bff !important;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: #333;
+    text-decoration: none;
+    margin-right: 15px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
     
     .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .hero-section .lead {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }

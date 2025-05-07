@@ -2,188 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Reviews</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery Mobile CSS & JS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Custom styles */
+        .ui-header {
+            background-color: #2c3e50 !important;
+            color: white !important;
+        }
+        .ui-footer {
+            background-color: #2c3e50 !important;
+            color: white !important;
+            padding: 10px !important;
+        }
+        .ui-listview > li {
+            margin: 15px 0 !important;
+            border-radius: 8px !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+            transition: transform 0.2s ease !important;
+        }
+        .ui-listview > li:hover {
+            transform: translateY(-3px) !important;
+        }
+        .ui-listview img {
+            max-width: 150px !important;
+            height: auto !important;
+            border-radius: 4px !important;
+            margin: 10px !important;
+        }
+        .ui-listview h2 {
+            color: #2c3e50 !important;
+            font-size: 1.4em !important;
+            margin: 10px 0 !important;
+        }
+        .ui-listview p {
+            margin: 8px 0 !important;
+            line-height: 1.5 !important;
+            color: #34495e !important;
+        }
+        .ui-listview strong {
+            color: #16a085 !important;
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+<div data-role="page" id="home">
+    <div data-role="header" data-position="fixed">
         <h1>Movie Reviews</h1>
-    </header>
+    </div>
 
-    <main class="movie-container">
-        <!-- Movie 1 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_.jpg" alt="Avengers: Infinity War">
-            </div>
-            <div class="movie-info">
-                <h2>Avengers: Infinity War</h2>
-                <div class="genre">Action, Adventure, Fantasy</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span>8.4/10</span>
-                </div>
-                <p class="summary">The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>A spectacular culmination of the Marvel Cinematic Universe, Infinity War delivers an epic scale and emotional depth that few superhero movies have achieved. The film masterfully balances multiple storylines while maintaining tension throughout.</p>
-                </div>
-            </div>
-        </article>
+    <div data-role="main" class="ui-content" data-transition="slide">
+        <ul data-role="listview" data-inset="true">
 
-        <!-- Movie 2 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="The Shawshank Redemption">
-            </div>
-            <div class="movie-info">
-                <h2>The Shawshank Redemption</h2>
-                <div class="genre">Drama</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>9.3/10</span>
-                </div>
-                <p class="summary">Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>A masterpiece of hope and friendship, The Shawshank Redemption stands as one of the greatest films ever made. Its powerful storytelling and exceptional performances make it a timeless classic.</p>
-                </div>
-            </div>
-        </article>
-
-        <!-- Movie 3 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg" alt="Inception">
-            </div>
-            <div class="movie-info">
+            <!-- Movie 1 -->
+            <li data-transition="fade">
+                <img src="./dummy.png" alt="Inception Poster">
                 <h2>Inception</h2>
-                <div class="genre">Action, Adventure, Sci-Fi</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>8.8/10</span>
-                </div>
-                <p class="summary">A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>Christopher Nolan's mind-bending masterpiece combines stunning visuals with a complex narrative that keeps viewers engaged from start to finish. A true testament to original filmmaking.</p>
-                </div>
-            </div>
-        </article>
+                <p><strong>Genre:</strong> Sci-Fi, Thriller</p>
+                <p><strong>Summary:</strong> A skilled thief uses dream-sharing technology to perform corporate espionage.</p>
+                <p><strong>Review:</strong> A mind-bending masterpiece by Christopher Nolan with stunning visuals and a gripping plot.</p>
+            </li>
 
-        <!-- Movie 4 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg" alt="Avengers: Endgame">
-            </div>
-            <div class="movie-info">
-                <h2>Avengers: Endgame</h2>
-                <div class="genre">Action, Adventure, Drama</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>8.4/10</span>
-                </div>
-                <p class="summary">After the devastating events of Infinity War, the Avengers must assemble once more to undo Thanos' actions and restore balance to the universe.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>A perfect conclusion to the Infinity Saga, Endgame delivers emotional depth, spectacular action, and satisfying character arcs. A monumental achievement in blockbuster filmmaking.</p>
-                </div>
-            </div>
-        </article>
+            <!-- Movie 2 -->
+            <li>
+                <img src="https://m.media-amazon.com/images/I/51NiGlapXlL.jpg" alt="The Shawshank Redemption Poster">
+                <h2>The Shawshank Redemption</h2>
+                <p><strong>Genre:</strong> Drama</p>
+                <p><strong>Summary:</strong> Two imprisoned men bond over years, finding hope and redemption through acts of decency.</p>
+                <p><strong>Review:</strong> A powerful story about friendship, hope, and the resilience of the human spirit.</p>
+            </li>
 
-        <!-- Movie 5 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg" alt="Oppenheimer">
-            </div>
-            <div class="movie-info">
-                <h2>Oppenheimer</h2>
-                <div class="genre">Biography, Drama, History</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>8.9/10</span>
-                </div>
-                <p class="summary">The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>A masterful biopic that combines stunning visuals with powerful performances. Christopher Nolan delivers a thought-provoking exploration of one of history's most complex figures.</p>
-                </div>
-            </div>
-        </article>
-
-        <!-- Movie 6 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BZjRlZDIyNDMtYjM0Yy00ZjM2LWE5ZTEtYzM5YzM5YzM5YzM5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="The Dark Knight">
-            </div>
-            <div class="movie-info">
+            <!-- Movie 3 -->
+            <li>
+                <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="The Dark Knight Poster">
                 <h2>The Dark Knight</h2>
-                <div class="genre">Action, Crime, Drama</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>9.0/10</span>
-                </div>
-                <p class="summary">When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>Heath Ledger's iconic performance as the Joker elevates this superhero film to new heights. A masterpiece that redefined the genre with its complex themes and exceptional storytelling.</p>
-                </div>
-            </div>
-        </article>
+                <p><strong>Genre:</strong> Action, Crime, Drama</p>
+                <p><strong>Summary:</strong> Batman faces the Joker, a criminal mastermind who plunges Gotham into chaos.</p>
+                <p><strong>Review:</strong> A dark and gripping superhero film with a legendary performance by Heath Ledger.</p>
+            </li>
 
-        <!-- Movie 7 -->
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="The Godfather">
-            </div>
-            <div class="movie-info">
-                <h2>The Godfather</h2>
-                <div class="genre">Crime, Drama</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>9.2/10</span>
-                </div>
-                <p class="summary">The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</p>
-                <div class="review">
-                    <h3>Review</h3>
-                    <p>Francis Ford Coppola's masterpiece is a perfect blend of crime drama and family saga. Marlon Brando and Al Pacino deliver unforgettable performances in this cinematic classic.</p>
-                </div>
-            </div>
-        </article>
-    </main>
+            <!-- Movie 4 -->
+            <li>
+                <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Interstellar Poster">
+                <h2>Interstellar</h2>
+                <p><strong>Genre:</strong> Sci-Fi, Adventure</p>
+                <p><strong>Summary:</strong> A team of explorers travel through a wormhole in space to ensure humanity's survival.</p>
+                <p><strong>Review:</strong> Visually spectacular and emotionally profound — a true space odyssey by Nolan.</p>
+            </li>
 
-    <script src="script.js"></script>
+            <!-- Movie 5 -->
+            <li>
+                <img src="https://m.media-amazon.com/images/I/51oD2gT3Q6L.jpg" alt="Forrest Gump Poster">
+                <h2>Forrest Gump</h2>
+                <p><strong>Genre:</strong> Drama, Romance</p>
+                <p><strong>Summary:</strong> A simple man with a low IQ leads an extraordinary life, influencing key historical events.</p>
+                <p><strong>Review:</strong> A heartwarming tale with brilliant storytelling and an unforgettable performance by Tom Hanks.</p>
+            </li>
+        </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2025 Movie Reviews</h4>
+    </div>
+</div>
+
 </body>
-</html> 
+</html>

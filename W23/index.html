@@ -2,143 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PICT Clubs & Activities</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>PICT Student Clubs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Common styles for header and footer */
+        .custom-header, .custom-footer {
+            background: #1a237e;
+            color: white;
+        }
+
+        /* Club content styles */
+        .club-image {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .club-description {
+            margin: 10px 0;
+        }
+
+        .club-achievements {
+            background: #e8eaf6;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">PICT Clubs</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cultural">Cultural</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#technical">Technical</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sports">Sports</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container mt-5 pt-4">
-        <div class="row" id="cultural">
-            <h2 class="section-title">Cultural Clubs</h2>
-            
-            <div class="col-12 mb-4">
-                <div class="card club-card">
-                    <img src="images/cultural-club.jpg" class="card-img-top" alt="Cultural Club">
-                    <div class="card-body">
-                        <h3 class="card-title">Cultural Club</h3>
-                        <p class="card-text">Cultural Club puts forth students' innovative ideas at inter-collegiate cultural events by providing them with necessary social, technical, environmental, and financial support.</p>
-                        <div class="achievements">
-                            <h4>Achievements</h4>
-                            <ul>
-                                <li>Organizes various cultural events and competitions</li>
-                                <li>Participates in inter-collegiate cultural festivals</li>
-                                <li>Promotes artistic expression and cultural diversity</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<div data-role="page" id="clubs">
+    <div data-role="header" data-position="fixed" class="custom-header">
+        <h1>PICT Student Clubs</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsible-set">
+
+            <!-- Coding Club -->
+            <div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="a">
+                <h3>Coding Club</h3>
+                <p class="club-description"><strong>Description:</strong> A hub for enthusiastic programmers to improve their coding skills and participate in hackathons.</p>
+                <p class="club-achievements"><strong>Achievements:</strong> Winners of Smart India Hackathon 2023, GSoC contributors, CodeChef campus chapter awardees.</p>
+                <img src="https://via.placeholder.com/300x180?text=Coding+Event" alt="Coding Club Event" class="club-image">
             </div>
 
-            <div class="col-12 mb-4">
-                <div class="card club-card">
-                    <img src="images/pictoreal.jpg" class="card-img-top" alt="Pictoreal">
-                    <div class="card-body">
-                        <h3 class="card-title">Pictoreal</h3>
-                        <p class="card-text">PICTOREAL is a group of high-spirited individuals and one of the most sought-after non-technical clubs at PICT. It has published 24 vibrant magazines showcasing remarkable contributions of its members.</p>
-                        <div class="achievements">
-                            <h4>Achievements</h4>
-                            <ul>
-                                <li>Published 24 magazines</li>
-                                <li>Showcases student creativity and talent</li>
-                                <li>Provides platform for literary expression</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" id="technical">
-            <h2 class="section-title">Technical Clubs</h2>
-            
-            <div class="col-12 mb-4">
-                <div class="card club-card">
-                    <img src="images/gamedev.jpg" class="card-img-top" alt="Game Development Club">
-                    <div class="card-body">
-                        <h3 class="card-title">Game Development Club</h3>
-                        <p class="card-text">GameDevutopia is the official game development club of PICT. The club's objective is to make people aware of various aspects of game development and provide a platform for collaborative projects.</p>
-                        <div class="achievements">
-                            <h4>Achievements</h4>
-                            <ul>
-                                <li>Collaboration with Ubisoft</li>
-                                <li>Won various game jams at IIIT Kottayam and IIT Madras</li>
-                                <li>Over 90 active members</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <!-- Robotics Club -->
+            <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                <h3>Robotics Club</h3>
+                <p class="club-description"><strong>Description:</strong> Focuses on building robots and participating in national-level robotics competitions.</p>
+                <p class="club-achievements"><strong>Achievements:</strong> Secured 2nd place in ROBOCON 2024, hosted annual Robowar competition.</p>
+                <img src="https://via.placeholder.com/300x180?text=Robotics+Demo" alt="Robotics Club" class="club-image">
             </div>
 
-            <div class="col-12 mb-4">
-                <div class="card club-card">
-                    <img src="images/pac.jpg" class="card-img-top" alt="PICT Automobile Club">
-                    <div class="card-body">
-                        <h3 class="card-title">PICT Automobile Club (PAC)</h3>
-                        <p class="card-text">PAC provides a platform for students to indulge in their passion for motorsports. Students get hands-on experience in building competitive racing EVs and compete at the national level.</p>
-                        <div class="achievements">
-                            <h4>Achievements</h4>
-                            <ul>
-                                <li>National level racing competitions</li>
-                                <li>Hands-on experience in EV development</li>
-                                <li>Interdisciplinary learning opportunities</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <!-- Dance Club -->
+            <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                <h3>Dance Club</h3>
+                <p class="club-description"><strong>Description:</strong> A creative outlet for students to express themselves through various dance forms.</p>
+                <p class="club-achievements"><strong>Achievements:</strong> Winners of Firodiya Karandak 2023, represented PICT in national cultural festivals.</p>
+                <img src="https://via.placeholder.com/300x180?text=Dance+Performance" alt="Dance Club" class="club-image">
             </div>
-        </div>
 
-        <div class="row" id="sports">
-            <h2 class="section-title">Sports & Physical Education</h2>
-            
-            <div class="col-12 mb-4">
-                <div class="card club-card">
-                    <img src="images/sports.jpg" class="card-img-top" alt="Sports">
-                    <div class="card-body">
-                        <h3 class="card-title">Sports & Physical Education</h3>
-                        <p class="card-text">Sports allows students to compete against skilled athletes from other colleges and universities. It emphasizes student initiative and team management, allowing participants to shape their own experience.</p>
-                        <div class="achievements">
-                            <h4>Achievements</h4>
-                            <ul>
-                                <li>Inter-collegiate sports competitions</li>
-                                <li>Team sports and individual events</li>
-                                <li>Physical fitness and wellness programs</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <!-- Photography Club -->
+            <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                <h3>Photography Club</h3>
+                <p class="club-description"><strong>Description:</strong> A community of passionate photographers capturing moments on and off campus.</p>
+                <p class="club-achievements"><strong>Achievements:</strong> Conducted successful photo exhibitions, collaborated with college magazine team.</p>
+                <img src="https://via.placeholder.com/300x180?text=Photo+Exhibit" alt="Photography Club" class="club-image">
             </div>
+
         </div>
     </div>
 
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 PICT Clubs & Activities. All rights reserved.</p>
-    </footer>
+    <div data-role="footer" data-position="fixed" class="custom-footer">
+        <h4>&copy; 2025 PICT Student Clubs</h4>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>

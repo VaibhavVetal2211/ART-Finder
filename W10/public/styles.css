@@ -1,7 +1,6 @@
 :root {
     --primary-color: #4a90e2;
     --secondary-color: #2c3e50;
-    --success-color: #2ecc71;
     --danger-color: #e74c3c;
     --light-gray: #f5f6fa;
     --dark-gray: #2c3e50;
@@ -15,7 +14,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--light-gray);
     color: var(--dark-gray);
@@ -32,7 +31,7 @@ body {
 
 .nav-brand {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: bold;
     color: var(--primary-color);
 }
 
@@ -40,7 +39,6 @@ body {
     color: var(--dark-gray);
     text-decoration: none;
     margin-left: 2rem;
-    transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -107,33 +105,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
     background-color: #357abd;
-}
-
-.todo-filters {
-    margin-bottom: 1.5rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.filter-btn {
-    background-color: var(--white);
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
 }
 
 .todo-list {
@@ -153,28 +128,27 @@ th, td {
 
 th {
     background-color: var(--light-gray);
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .action-btn {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-right: 0.5rem;
-    transition: color 0.3s ease;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
 }
 
 .edit-btn {
     color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .delete-btn {
     color: var(--danger-color);
-}
-
-.complete-btn {
-    color: var(--success-color);
+    border: 1px solid var(--danger-color);
 }
 
 .action-btn:hover {
@@ -196,9 +170,5 @@ footer {
     
     .nav-links {
         display: none;
-    }
-    
-    .todo-filters {
-        flex-wrap: wrap;
     }
 } 

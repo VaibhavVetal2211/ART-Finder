@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mug Store - Products</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .col-sm-6 {
+            transition: all 0.3s ease-in-out;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -27,7 +39,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item"> 
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
@@ -46,70 +58,21 @@
         <div class="row mb-4">
             <div class="col-lg-9">
                 <div class="d-flex flex-wrap gap-2 align-items-center">
+                    
+
                     <!-- Category Filter -->
                     <div class="dropdown">
                         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="categoryFilter" data-bs-toggle="dropdown" aria-expanded="false">
                             Category
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="categoryFilter">
-                            <li><a class="dropdown-item active" href="#">All Categories</a></li>
+                            <li><a class="dropdown-item active" href="#" data-category="all">All Categories</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Ceramic Mugs</a></li>
-                            <li><a class="dropdown-item" href="#">Travel Mugs</a></li>
-                            <li><a class="dropdown-item" href="#">Color Changing Mugs</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="ceramic">Ceramic Mug</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="travel">Travel Mug</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="kids">Kids Mug</a></li>
                         </ul>
                     </div>
-
-                    <!-- Material Filter -->
-                    <div class="dropdown">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="materialFilter" data-bs-toggle="dropdown" aria-expanded="false">
-                            Material
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="materialFilter">
-                            <li><a class="dropdown-item active" href="#">All Materials</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Ceramic</a></li>
-                            <li><a class="dropdown-item" href="#">Glass</a></li>
-                            <li><a class="dropdown-item" href="#">Stainless Steel</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Size Filter -->
-                    <div class="dropdown">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="sizeFilter" data-bs-toggle="dropdown" aria-expanded="false">
-                            Size
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="sizeFilter">
-                            <li><a class="dropdown-item active" href="#">All Sizes</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Small (8 oz)</a></li>
-                            <li><a class="dropdown-item" href="#">Medium (12 oz)</a></li>
-                            <li><a class="dropdown-item" href="#">Large (16 oz)</a></li>
-                            <li><a class="dropdown-item" href="#">Extra Large (20+ oz)</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Price Filter -->
-                    <div class="dropdown">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="priceFilter" data-bs-toggle="dropdown" aria-expanded="false">
-                            Price Range
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="priceFilter">
-                            <li><a class="dropdown-item active" href="#">All Prices</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Under $15</a></li>
-                            <li><a class="dropdown-item" href="#">$15 - $25</a></li>
-                            <li><a class="dropdown-item" href="#">Over $25</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 mt-3 mt-lg-0">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search products...">
-                    <button class="btn btn-primary" type="button">
-                        <i class="bi bi-search"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -273,6 +236,100 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+<script>
+    // Category filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryFilter = document.getElementById('categoryFilter');
+        const categoryFilterButton = categoryFilter.querySelector('.dropdown-toggle');
+        
+        // Initialize filter on load
+        filterProducts('all');
+        
+        // Add click event listeners to dropdown items
+        categoryFilter.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all items
+                categoryFilter.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Get the category from data attribute
+                const category = this.dataset.category;
+                
+                // Update button text
+                if (category === 'all') {
+                    categoryFilterButton.textContent = 'Category';
+                } else {
+                    categoryFilterButton.textContent = this.textContent;
+                }
+                
+                // Apply the filter
+                filterProducts(category);
+            });
+        });
+    });
+
+    function filterProducts(category) {
+        const products = document.querySelectorAll('.col-sm-6');
+        products.forEach(product => {
+            const productTitle = product.querySelector('.card-title').textContent.toLowerCase();
+            let showProduct = false;
+
+            switch(category) {
+                case 'all':
+                    showProduct = true;
+                    break;
+                case 'ceramic':
+                    showProduct = productTitle.includes('ceramic') || 
+                                productTitle.includes('white') || 
+                                productTitle.includes('black') || 
+                                productTitle.includes('patterned');
+                    break;
+                case 'travel':
+                    showProduct = productTitle.includes('travel') || 
+                                productTitle.includes('stainless steel');
+                    break;
+                case 'kids':
+                    showProduct = productTitle.includes('kids') || 
+                                productTitle.includes('fun');
+                    break;
+                default:
+                    showProduct = true;
+            }
+
+            // Apply display style
+            product.style.display = showProduct ? 'block' : 'none';
+            
+            // Add animation class for smooth transition
+            if (showProduct) {
+                product.classList.add('fade-in');
+            } else {
+                product.classList.remove('fade-in');
+            }
+        });
+
+        // Reorder visible products
+        const container = document.querySelector('.row.g-4');
+        const visibleProducts = Array.from(products).filter(p => p.style.display !== 'none');
+        const hiddenProducts = Array.from(products).filter(p => p.style.display === 'none');
+        
+        // Clear container
+        container.innerHTML = '';
+        
+        // Add visible products first
+        visibleProducts.forEach(product => {
+            container.appendChild(product);
+        });
+        
+        // Add hidden products
+        hiddenProducts.forEach(product => {
+            container.appendChild(product);
+        });
+    }
+</script>
 </html>
