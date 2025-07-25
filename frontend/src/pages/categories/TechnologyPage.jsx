@@ -11,16 +11,16 @@ function TechnologyPage() {
   useEffect(() => {
     const fetchTechNews = async () => {
       try {
-        const response = await axios.get('https://newsapi.org/v2/everything', {
+        const response = await axios.get('http://localhost:5000/api/news/search', {
           params: {
-            domains: 'techcrunch.com,thenextweb.com',
-            apiKey: '8387d2b7051240a7abaceda5d0c5dd56',
-            pageSize: 12, // Limit to 12 articles
-            language: 'en',
-            sortBy: 'publishedAt'
+            query: 'technology',
+            category: 'technology',
+            lang: 'en',
+            country: 'us',
+            max: 12
           }
         })
-        setArticles(response.data.articles)
+        setArticles(response.data.data.articles)
         setLoading(false)
       } catch (error) {
         console.error('Error fetching tech news:', error)

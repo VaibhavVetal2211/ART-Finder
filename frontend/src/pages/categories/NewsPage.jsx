@@ -31,17 +31,16 @@ function NewsPage() {
 
     const fetchIndianNews = async () => {
       try {
-        const response = await axios.get('https://newsapi.org/v2/everything', {
+        const response = await axios.get('http://localhost:5000/api/news/search', {
           params: {
-            domains: 'timesofindia.com,ndtv.com,indianexpress.com,hindustantimes.com,news18.com',
-            apiKey: '8387d2b7051240a7abaceda5d0c5dd56',
-            pageSize: 12,
-            language: 'en',
-            sortBy: 'publishedAt',
-            q: 'India OR indian OR delhi OR mumbai'
+            query: 'India OR indian OR delhi OR mumbai',
+            category: 'general',
+            lang: 'en',
+            country: 'in',
+            max: 12
           }
         })
-        setArticles(response.data.articles)
+        setArticles(response.data.data.articles)
         setLoading(false)
       } catch (error) {
         console.error('Error fetching Indian news:', error)

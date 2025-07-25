@@ -29,7 +29,7 @@ function ChatPage() {
       setLoading(true)
 
       try {
-        const response = await axios.post('https://llm-query.onrender.com/api/chat/chat', {
+        const response = await axios.post('http://localhost:5000/api/chat/chat', {
           message: input,
           category: category
         })

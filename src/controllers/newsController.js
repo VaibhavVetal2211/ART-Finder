@@ -6,7 +6,7 @@ const fetchNews = async (req, res) => {
         
         const apiKey = process.env.GNEWS_API_KEY;
         let url = `https://gnews.io/api/v4/search?apikey=${apiKey}&lang=${lang}&country=${country}&max=${max}`;
-        console.log("GNEWS_API_KEY:", process.env.GNEWS_API_KEY);
+       
         
         if (query) {
             url += `&q=${encodeURIComponent(query)}`;

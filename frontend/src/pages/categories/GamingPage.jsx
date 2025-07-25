@@ -11,17 +11,16 @@ function GamingPage() {
   useEffect(() => {
     const fetchGamingNews = async () => {
       try {
-        const response = await axios.get('https://newsapi.org/v2/everything', {
+        const response = await axios.get('http://localhost:5000/api/news/search', {
           params: {
-            domains: 'ign.com,gamespot.com,polygon.com',
-            apiKey: '8387d2b7051240a7abaceda5d0c5dd56',
-            pageSize: 12,
-            language: 'en',
-            sortBy: 'publishedAt',
-            q: 'gaming OR games'
+            query: 'gaming OR games',
+            category: 'gaming',
+            lang: 'en',
+            country: 'us',
+            max: 12
           }
         })
-        setArticles(response.data.articles)
+        setArticles(response.data.data.articles)
         setLoading(false)
       } catch (error) {
         console.error('Error fetching gaming news:', error)
