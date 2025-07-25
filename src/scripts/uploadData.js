@@ -6,7 +6,7 @@ const pinecone = new Pinecone({
     apiKey: process.env.PINECONE_API_KEY
 });
 
-const index = pinecone.index("art-finder");
+const index = pinecone.index("insightai-index");
 
 const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY
@@ -109,7 +109,7 @@ async function generateEmbedding(text) {
     try {
         const completion = await groq.chat.completions.create({
             messages: [{ role: "user", content: text }],
-            model: "mixtral-8x7b-32768",  // Changed from llama-text-embed-v2 to mixtral-8x7b-32768
+            model: "llama-3.3-70b-versatile",  // Changed from llama-text-embed-v2 to mixtral-8x7b-32768
             temperature: 0.5,
         });
 
